@@ -354,3 +354,49 @@ p { margin: 0 0 1rem; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* =========================================================
+   Light gray header & hero
+   ========================================================= */
+:root {
+  --gray: #e7e5e2;
+  --gray-2: #dcd9d5;
+  --ink-text: #1f1915;
+  --ink-muted: #4d433b;
+  --gold-deep-grad: linear-gradient(135deg, #a77a22 0%, #8c6a24 45%, #b4862e 75%, #7a5a1c 100%);
+}
+.site-header {
+  background: rgba(231, 229, 226, .92);
+  border-bottom: 1px solid rgba(140, 106, 36, .25);
+}
+.brand img { border-color: rgba(140, 106, 36, .5); }
+.brand-name { color: var(--gold-dark); }
+.brand-name em { color: var(--ink-text); }
+.nav a:not(.btn) { color: var(--ink-muted); font-weight: 400; }
+.nav a:not(.btn):hover { color: var(--gold-dark); }
+.menu-toggle span { background: var(--ink-text); }
+
+.hero {
+  background:
+    radial-gradient(1000px 500px at 85% 20%, rgba(201, 162, 74, .16), transparent 60%),
+    radial-gradient(800px 600px at 0% 100%, rgba(200, 171, 139, .35), transparent 60%),
+    var(--gray);
+  color: var(--ink-text);
+}
+.hero::after {
+  background: repeating-linear-gradient(115deg, transparent 0 22px, rgba(60, 45, 35, .35) 23px, transparent 24px 60px);
+}
+.hero .eyebrow { color: var(--gold-dark); }
+.hero h1 { color: var(--ink-text); }
+.hero h1 .gold-text { background: var(--gold-deep-grad); -webkit-background-clip: text; background-clip: text; }
+.hero .lead { color: var(--ink-muted); }
+.hero-perks { color: var(--ink-text); }
+.hero .btn-outline { border-color: var(--gold-dark); color: #6b4f17; font-weight: 600; }
+.hero .btn-outline:hover { background: rgba(140, 106, 36, .1); }
+.arch { border-color: rgba(140, 106, 36, .55); box-shadow: 0 24px 50px -24px rgba(40, 30, 20, .45); }
+.hero-badge { box-shadow: 0 14px 34px rgba(40, 30, 20, .35); }
+
+@media (max-width: 760px) {
+  .nav { background: var(--gray); border-bottom-color: rgba(140, 106, 36, .3); }
+  .nav a:not(.btn) { border-bottom-color: rgba(0, 0, 0, .08); }
+}
